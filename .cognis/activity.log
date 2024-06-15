@@ -36,3 +36,4 @@
 2025-10-06T19:49:59  fix: works on my machine (TM)
 2026-02-07T14:06:06  chore: in case of fire — commit, push, leave building
 2026-03-16T09:23:13  docs: ELI5 pass
+2024-06-15T08:04:44  docs(cli): add a JSON schema for output
