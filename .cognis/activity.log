@@ -28,3 +28,4 @@
 2026-04-09T17:03:33  refactor: tidy internals
 2026-04-22T12:20:40  fix: handle empty input gracefully
 2026-05-28T19:37:47  perf: micro-optimization
+2024-08-21T08:24:24  docs: here be dragons
