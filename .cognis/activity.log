@@ -47,3 +47,4 @@
 2024-11-01T16:20:40  docs(tests): improve error messages with context
 2024-11-23T11:37:47  test(scan): add a regression fixture
 2024-12-15T18:54:54  ci(fixtures): handle CRLF line endings
+2025-01-06T13:11:01  feat(engine): stream large files without buffering
