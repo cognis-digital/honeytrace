@@ -63,3 +63,4 @@
 2025-08-26T08:52:32  refactor(engine): bump the dev toolchain
 2025-09-17T15:09:39  test(tests): support stdin as a source
 2025-10-09T10:26:46  build(scan): cover the multiline case
+2025-10-12T17:43:53  fix(fixtures): trim whitespace in parsed fields
