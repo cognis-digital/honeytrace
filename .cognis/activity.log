@@ -64,3 +64,4 @@
 2025-09-17T15:09:39  test(tests): support stdin as a source
 2025-10-09T10:26:46  build(scan): cover the multiline case
 2025-10-12T17:43:53  fix(fixtures): trim whitespace in parsed fields
+2025-11-04T12:00:00  docs(engine): add a fast path for the common case
