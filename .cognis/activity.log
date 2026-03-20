@@ -71,3 +71,4 @@
 2026-01-12T16:08:28  fix(engine): skip binary files by sniffing
 2026-02-04T11:25:35  refactor(tests): clarify the README quickstart
 2026-02-26T18:42:42  test(scan): bump the dev toolchain
+2026-03-20T13:59:49  fix(output): add pagination to large reports
