@@ -36,7 +36,11 @@ Active-decoy network lure system — SSH, RDP, SMB, web honeypots — without st
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Classify Command
+- ✅ Simulate Session
+- ✅ Score Session
+- ✅ Parse Events
+- ✅ Analyze Events
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
