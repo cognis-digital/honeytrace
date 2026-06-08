@@ -1,0 +1,16 @@
+[
+  {
+    "service": "http",
+    "path": "/api/v1/customers",
+    "src_ip": "198.51.100.42",
+    "ua": "Mozilla/5.0...",
+    "ts": "2026-06-08T11:14:00Z"
+  },
+  {
+    "service": "http",
+    "path": "/api/internal/admin",
+    "src_ip": "198.51.100.42",
+    "ua": "Mozilla/5.0...",
+    "ts": "2026-06-08T11:14:30Z"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "service": "ssh",
+    "auth_attempted": true,
+    "src_ip": "185.220.101.15",
+    "user": "root",
+    "ts": "2026-06-08T08:01:00Z"
+  },
+  {
+    "service": "ssh",
+    "auth_attempted": true,
+    "src_ip": "185.220.101.15",
+    "user": "admin",
+    "ts": "2026-06-08T08:01:30Z"
+  },
+  {
+    "service": "http",
+    "path": "/wp-admin",
+    "src_ip": "45.83.65.7",
+    "ts": "2026-06-08T08:02:11Z"
+  },
+  {
+    "service": "http",
+    "path": "/phpmyadmin",
+    "src_ip": "45.83.65.7",
+    "ts": "2026-06-08T08:02:14Z"
+  },
+  {
+    "service": "http",
+    "path": "/admin",
+    "src_ip": "45.83.65.7",
+    "ts": "2026-06-08T08:02:17Z"
+  }
+]
