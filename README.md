@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-honeytrace
+pip install "git+https://github.com/cognis-digital/honeytrace.git"
 honeytrace scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ Active-decoy network lure system — SSH, RDP, SMB, web honeypots — without st
 ## Quick start
 
 ```bash
-pip install cognis-honeytrace
+pip install "git+https://github.com/cognis-digital/honeytrace.git"
 honeytrace --version
 honeytrace scan .                       # scan current project
 honeytrace scan . --format json         # machine-readable

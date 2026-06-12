@@ -1,5 +1,4 @@
 """Smoke tests for HONEYTRACE."""
-import pytest
 from honeytrace.core import scan, TOOL_NAME, TOOL_VERSION
 from cognis_core import ScanResult
 
