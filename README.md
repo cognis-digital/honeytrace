@@ -16,9 +16,15 @@
 </div>
 
 ```bash
-pip install cognis-honeytrace
+pip install "git+https://github.com/cognis-digital/honeytrace.git"
 honeytrace scan .            # → prioritized findings in seconds
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+Honeytrace sets up fake network services (like SSH login prompts, Windows file shares, and web portals) that look real to attackers but are actually traps. When someone connects and starts probing or running commands, Honeytrace records everything they do and scores how dangerous they are. It is designed for security teams who want to detect intruders early by baiting them into interacting with decoy systems that normal users would never touch. The tool runs locally with no external accounts required and outputs structured reports you can feed into alerts, dashboards, or automated pipelines.
+<!-- cognis:layman:end -->
 
 ## Contents
 
@@ -47,10 +53,56 @@ Active-decoy network lure system — SSH, RDP, SMB, web honeypots — without st
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** Cyber & Security  ·  **JTF MERIDIAN division:** NULLBYTE · SPECTER
+
+**Topics:** `cognis` `security` `infosec` `cybersecurity` `blue-team`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`honeytrace` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/honeytrace/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/honeytrace/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/honeytrace.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/honeytrace.git"  # uv
+pip install "git+https://github.com/cognis-digital/honeytrace.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/honeytrace.git
+cd honeytrace && pip install .
+```
+
+Then run:
+```sh
+honeytrace --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
-pip install cognis-honeytrace
+pip install "git+https://github.com/cognis-digital/honeytrace.git"
 honeytrace --version
 honeytrace scan .                       # scan current project
 honeytrace scan . --format json         # machine-readable
