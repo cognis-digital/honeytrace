@@ -22,29 +22,40 @@ honeytrace scan .            # → prioritized findings in seconds
 
 ## Usage — step by step
 
-`honeytrace` is an active-decoy lure system: it simulates attacker interaction
-with decoy services and analyzes the resulting event log (defensive use only).
-Subcommands: `services`, `simulate`, `analyze`.
+> Defensive active-decoy / honeypot tooling.
 
-```bash
-# 1. Install
-pip install -e .
+1. **Install:**
 
-# 2. List the configured decoy service profiles
-honeytrace services
+   ```bash
+   pip install honeytrace
+   ```
 
-# 3. Simulate an attacker session against a decoy and capture the event log
-honeytrace --format json simulate ssh -c "uname -a" -c "cat /etc/passwd" \
-  --accept-after 2 --seed lab1 > events.jsonl
+2. **List the decoy service profiles** (SSH / RDP / SMB / HTTP) you can stand up:
 
-# 4. Analyze a captured JSONL event log (- reads stdin) for attacker behavior
-honeytrace analyze events.jsonl
-honeytrace --format json analyze events.jsonl > analysis.json
+   ```bash
+   honeytrace services
+   ```
 
-# 5. Automation — drive scripted inputs from a file in a lab harness
-honeytrace simulate http --script payloads.txt --src-ip 203.0.113.10
-```
+3. **Simulate a decoy session** and score the attacker — feed scripted inputs with repeatable `-c` or a `--script` file:
 
+   ```bash
+   honeytrace simulate ssh -c "uname -a" -c "cat /etc/passwd" --src-ip 203.0.113.9
+   ```
+
+   Exit code is non-zero (2) when the verdict is high/critical — handy for alerting.
+
+4. **Analyze captured events** — ingest a JSONL decoy event log into per-IP threat intel (`-` for stdin):
+
+   ```bash
+   honeytrace analyze events.jsonl
+   cat events.jsonl | honeytrace analyze -
+   ```
+
+5. **Automation** — emit JSON for your SIEM / pipeline:
+
+   ```bash
+   honeytrace --format json analyze events.jsonl | jq '.sources[] | {src_ip, verdict}'
+   ```
 
 ## Contents
 
