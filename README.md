@@ -20,6 +20,32 @@ pip install cognis-honeytrace
 honeytrace scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+`honeytrace` is an active-decoy lure system: it simulates attacker interaction
+with decoy services and analyzes the resulting event log (defensive use only).
+Subcommands: `services`, `simulate`, `analyze`.
+
+```bash
+# 1. Install
+pip install -e .
+
+# 2. List the configured decoy service profiles
+honeytrace services
+
+# 3. Simulate an attacker session against a decoy and capture the event log
+honeytrace --format json simulate ssh -c "uname -a" -c "cat /etc/passwd" \
+  --accept-after 2 --seed lab1 > events.jsonl
+
+# 4. Analyze a captured JSONL event log (- reads stdin) for attacker behavior
+honeytrace analyze events.jsonl
+honeytrace --format json analyze events.jsonl > analysis.json
+
+# 5. Automation — drive scripted inputs from a file in a lab harness
+honeytrace simulate http --script payloads.txt --src-ip 203.0.113.10
+```
+
+
 ## Contents
 
 - [Why honeytrace?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
