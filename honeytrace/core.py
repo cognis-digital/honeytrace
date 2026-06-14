@@ -170,6 +170,20 @@ def simulate_session(service_name, commands, src_ip=None, accept_after=2,
     if service_name not in SERVICE_PROFILES:
         raise ValueError(f"unknown service '{service_name}' "
                          f"(have: {', '.join(sorted(SERVICE_PROFILES))})")
+    try:
+        accept_after = int(accept_after)
+    except (ValueError, TypeError) as exc:
+        raise ValueError(
+            f"accept_after must be an integer, got {accept_after!r}"
+        ) from exc
+    if accept_after < 1:
+        raise ValueError(
+            f"accept_after must be >= 1, got {accept_after}"
+        )
+    if commands is None:
+        commands = []
+    if not hasattr(commands, "__iter__"):
+        raise ValueError("commands must be an iterable of strings")
     svc = SERVICE_PROFILES[service_name]
     src_ip = src_ip or _seeded_ip(f"{seed}:{service_name}")
     session_id = hashlib.sha256(
@@ -293,7 +307,13 @@ def parse_events(lines):
             ev.tactic, ev.severity, ev.tag = cls["tactic"], cls["severity"], cls["tag"]
         else:
             ev.tactic = str(obj.get("tactic", ev.tactic))
-            ev.severity = int(obj.get("severity", ev.severity) or 0)
+            raw_sev = obj.get("severity", ev.severity)
+            try:
+                ev.severity = int(raw_sev or 0)
+            except (ValueError, TypeError) as exc:
+                raise ValueError(
+                    f"line {n}: 'severity' must be numeric, got {raw_sev!r}"
+                ) from exc
             ev.tag = str(obj.get("tag", ev.tag))
         events.append(ev)
     return events

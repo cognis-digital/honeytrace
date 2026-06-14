@@ -48,10 +48,21 @@ def _cmd_services(args):
 
 
 def _cmd_simulate(args):
+    if args.accept_after < 1:
+        print(
+            f"error: --accept-after must be >= 1, got {args.accept_after}",
+            file=sys.stderr,
+        )
+        return 1
     commands = []
     if args.script:
-        with open(args.script, "r", encoding="utf-8") as fh:
-            commands = [ln.rstrip("\n") for ln in fh]
+        try:
+            with open(args.script, "r", encoding="utf-8") as fh:
+                commands = [ln.rstrip("\n") for ln in fh]
+        except OSError as exc:
+            print(f"error: cannot read script file {args.script!r}: {exc}",
+                  file=sys.stderr)
+            return 1
     elif args.command:
         commands = list(args.command)
 
