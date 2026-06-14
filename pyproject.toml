@@ -36,3 +36,6 @@ honeytrace = "honeytrace.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["honeytrace"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
