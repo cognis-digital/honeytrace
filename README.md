@@ -20,6 +20,64 @@ pip install cognis-honeytrace
 honeytrace scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ honeytrace-emit --version
+honeytrace 1.0.0
+```
+
+```console
+$ honeytrace-emit --help
+usage: honeytrace [-h] [--version] [--format {table,json}]
+                  {services,simulate,analyze} ...
+
+HONEYTRACE — active-decoy network lure system (SSH/RDP/SMB/HTTP honeypots).
+
+positional arguments:
+  {services,simulate,analyze}
+    services            list configured decoy services
+    simulate            emulate a decoy session + score the attacker
+    analyze             ingest JSONL decoy events -> per-IP threat intel
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+```
+
+> Blocks above are real `honeytrace` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"timestamp": "2023-02-16T14:30:00Z",
+"actor": {
+"name": "John Doe"
+},
+"object": {
+"type": "indicator",
+"guid": "1234567890abcdef",
+"value": "example.com"
+},
+"relationship": [
+{
+"type": "observed-data",
+"count": 5
+}
+],
+"note": "Example finding"
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 > Defensive active-decoy / honeypot tooling.

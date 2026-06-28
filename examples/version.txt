@@ -1,0 +1,3 @@
+$ honeytrace-emit --version
+
+honeytrace 1.0.0

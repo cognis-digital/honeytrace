@@ -1,0 +1,18 @@
+$ honeytrace-emit --help
+
+usage: honeytrace [-h] [--version] [--format {table,json}]
+                  {services,simulate,analyze} ...
+
+HONEYTRACE — active-decoy network lure system (SSH/RDP/SMB/HTTP honeypots).
+
+positional arguments:
+  {services,simulate,analyze}
+    services            list configured decoy services
+    simulate            emulate a decoy session + score the attacker
+    analyze             ingest JSONL decoy events -> per-IP threat intel
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
